@@ -128,6 +128,8 @@ def main():
         # A changed asset gets a new URL so returning visitors see the current design.
         for page_path in output.rglob('*.html'):
             def version_asset(match):
+                if match.group(2).startswith(('https:', 'http:', '//')):
+                    return match.group(0)
                 asset=(page_path.parent/match.group(2)).resolve()
                 digest=hashlib.sha256(asset.read_bytes()).hexdigest()[:12]
                 return match.group(1)+match.group(2)+'?v='+digest+match.group(3)
