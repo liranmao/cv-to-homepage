@@ -27,6 +27,9 @@ This is a schema illustration, not facts to reuse. Do not include nonexistent pl
 
 Optional top-level fields:
 
+- `theme`: style ID from [style-library.md](style-library.md), default `classic`.
+- `background`: background ID from the same reference, or `none`. Omit it to use the chosen style's default background.
+
 - `avatar`, `cv`: local `assets/...` paths. The create command fills these from `--avatar` and `--public-cv`. Never insert an absolute computer path.
 - `site_url`: actual canonical URL; deployment fills it automatically.
 - `publication_note`: authorship explanation only if applicable to these papers.

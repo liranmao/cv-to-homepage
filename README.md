@@ -4,7 +4,15 @@
 
 把简历交给 Codex 或 Claude，生成个人网站并部署到 GitHub Pages。本科生可以放课程项目和实习经历，硕博可以放研究方向和论文。
 
-[预览网站](https://liranmao.github.io/cv-to-homepage/) · [下载 Skill](https://github.com/liranmao/cv-to-homepage/releases/latest/download/cv-to-homepage.zip)
+[选择网站风格](https://liranmao.github.io/cv-to-homepage/) · [背景素材库](https://liranmao.github.io/cv-to-homepage/library/) · [下载 Skill](https://github.com/liranmao/cv-to-homepage/releases/latest/download/cv-to-homepage.zip)
+
+## 选择风格
+
+打开[风格总览](https://liranmao.github.io/cv-to-homepage/)，查看 8 种完整页面：经典学术、纸墨书页、瑞士网格、终端笔记、自然手记、蓝图研究、极光玻璃和独立作品集。
+
+每个页面顶部都能切换背景。选好“风格＋背景”后，点击“复制建站指令”，和简历一起发给 AI。可以先从[经典学术](https://liranmao.github.io/cv-to-homepage/styles/classic/)开始看。
+
+[素材库](https://liranmao.github.io/cv-to-homepage/library/)收录了粒子、纸感、点阵、网格、极光、星野、等高线、聚光、柔彩渐变和流线，附完整预览、参数与[源码下载](https://liranmao.github.io/cv-to-homepage/downloads/background-library.zip)。
 
 ## 安装
 
@@ -60,11 +68,12 @@ Claude Code 中用 `/cv-to-homepage` 替换 `$cv-to-homepage`。
 
 ```bash
 python3 skills/cv-to-homepage/scripts/create_site.py \
-  --profile examples/undergraduate.json --output ../my-homepage
+  --profile examples/undergraduate.json --output ../my-homepage \
+  --theme editorial --background paper
 python3 -m http.server 8000 --bind 127.0.0.1 --directory ../my-homepage/docs
 ```
 
-打开 `http://127.0.0.1:8000` 查看页面。三个示例分别是 `undergraduate.json`、`masters-zh.json` 和 `phd.json`，在 `examples/` 中。把占位符换成自己的信息即可。
+打开 `http://127.0.0.1:8000` 查看页面。三个示例分别是 `undergraduate.json`、`masters-zh.json` 和 `phd.json`，在 `examples/` 中。把占位符换成自己的信息即可。`--theme` 选择风格，`--background` 选择背景；不填写时使用经典学术风格。
 
 手动部署时，将 `USERNAME/REPO` 换成自己的用户名和新仓库名：
 

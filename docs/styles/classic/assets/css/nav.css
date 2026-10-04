@@ -1,0 +1,90 @@
+/* Add a background color to the top navigation */
+.topnav {
+    background-color: #060771;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+    .topnav {
+        background-color: #20212b;
+        border-bottom: 1px solid #3eb7f0;
+    }
+}
+
+.topnav #myLinks {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 5%;
+}
+
+.topnav a.icon {
+    display: none;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a.normal {
+    color: #ffffff;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+@media (prefers-color-scheme: dark) {
+    .topnav a.normal {
+        color: #dadbdf;
+    }
+}
+
+/* Change the color of links on hover */
+.topnav a.normal:hover {
+    background-color: #0d2b54;
+    color: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+    .topnav a.normal:hover {
+        background-color: #20212b;
+        color: #3eb7f0;
+    }
+}
+
+/* Add media queries for responsiveness */
+@media screen and (max-width: 960px) {
+    .topnav #myLinks {
+        display: none;
+        flex-direction: column;
+    }
+
+    .topnav.responsive #myLinks {
+        display: flex;
+    }
+
+    .topnav a.normal {
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+
+    .topnav a.icon {
+        color: #444;
+        display: block;
+        padding: 14px 16px;
+        font-size: 17px;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .topnav a.icon {
+            color: #dadbdf;
+        }
+    }
+}

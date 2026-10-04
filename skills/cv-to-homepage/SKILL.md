@@ -1,11 +1,11 @@
 ---
 name: cv-to-homepage
-description: Turn a CV or resume into an academic personal website using the bundled academic homepage template, then deploy to a new GitHub Pages repository when requested. Use for undergraduate, master's, or PhD personal homepages, including Chinese requests such as 用简历建立个人网站. Not for unrelated websites or redesigning an existing site.
+description: Turn a CV or resume into a personal academic website with a chosen gallery style and background, then deploy to a new GitHub Pages repository when requested. Use for undergraduate, master's, or PhD homepages, including Chinese requests such as 用简历建立个人网站 and selections from the CV to Homepage gallery.
 ---
 
 # CV to Homepage
 
-Build the user's website with the bundled template: navy navigation, profile sidebar, serif typography, publication thumbnails when available, responsive layout, dark mode, and a subtle particle background. Preserve this design unless the user requests a change.
+Build the user's website using the selected style and background. Read [references/style-library.md](references/style-library.md) when the user chooses a style, shares a gallery URL, or asks for options. All eight layouts and ten backgrounds are bundled; no online template fetch is required. The default `classic` style keeps the navy navigation, profile sidebar, serif typography and particle background. Preserve the selected design unless the user requests a change.
 
 Resolve helper paths relative to this skill's directory, wherever it is installed. The scripts need Python 3.9+; deployment additionally needs Git and authenticated GitHub CLI (`gh`). The user's Codex or Claude session interprets the CV; there is no extra model API, API key, or paid hosting dependency.
 
@@ -29,6 +29,8 @@ python3 -m http.server 8000 --bind 127.0.0.1 --directory /path/to/my-homepage/do
 ```
 
 Optional `--avatar /path/to/photo.png` copies a provided portrait. Only use `--public-cv /path/to/public-cv.pdf` when the user requested publishing that exact PDF. The JSON itself must contain only public information because it will be committed with the website.
+
+Use `--theme editorial --background paper`, for example, to apply a gallery selection. These options persist in `site.json`; rebuilds retain them. An omitted background uses the theme's default. `--background none` disables backgrounds. Generated personal sites contain the selected website, not the gallery or its selection toolbar.
 
 To add publication images, first generate without image fields; copy only supplied/reviewed images into the generated site's `assets/media/`, add their relative paths to `site.json`, then run `python3 /path/to/my-homepage/build.py`. Text is escaped, not interpreted as HTML or Markdown. Edit wording in `site.json`; keep layout edits in `template.html`/`assets/css/site.css` and rebuild.
 

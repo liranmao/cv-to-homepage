@@ -1,0 +1,70 @@
+/* Adapted from Liran Mao's Minimal Light homepage. Layout fixes and accessibility. */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+body { overflow-wrap: anywhere; }
+.wrapper { width: min(1160px, calc(100% - 64px)); }
+header { top: 30px; padding-top: 64px; max-height: calc(100vh - 40px); overflow-y: auto; }
+header .position { font-size: 1.1rem; margin: 0 0 4px; }
+header .degree { margin-bottom: 5px; }
+header .email { font-family: "Ubuntu Mono", monospace; font-size: 14px; margin-bottom: 22px; }
+.image.avatar { display: block; }
+.image.avatar img { width: 145px; height: 145px; padding: 16px; object-fit: cover; }
+.profile-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 9px 15px; }
+.profile-links a { color: #043361; }
+main { width: calc(100% - 310px); float: right; padding: 88px 0 60px; }
+article { margin-bottom: 30px; }
+article h2 { margin-bottom: 16px; }
+article h3 { margin-top: 20px; margin-bottom: 12px; }
+.entry { margin-bottom: 18px; }
+.entry p { margin-bottom: 4px; }
+.entry ul { margin-bottom: 6px; padding-left: 22px; }
+.publication-note { font-style: italic; font-size: .9rem; }
+.publications { margin-top: 20px; }
+.publications ol.bibliography li { min-height: 0; margin-bottom: 25px; }
+.pub-row { gap: 24px; align-items: flex-start; }
+.publications .abbr { flex: 0 0 200px; position: relative; height: auto !important; }
+.publications ol.bibliography li .teaser { width: 200px; height: 123px; margin: 0; }
+.publications .badge { position: absolute; top: 8px; left: 8px; background: #002d72; max-width: 180px; white-space: normal; }
+.pub-body { flex: 1; min-width: 0; }
+.pub-body .title { color: #002d72; }
+.pub-body .links { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 8px; font-size: 12px; }
+.pub-note { font-style: italic; margin: 5px 0 0; }
+.topnav { min-height: 52px; }
+.topnav #myLinks { flex-wrap: wrap; }
+.topnav a.normal { padding: 14px 16px; }
+.menu-toggle { display: none; background: none; border: 0; color: white; font: inherit; padding: 14px 20px; cursor: pointer; }
+a:focus-visible, button:focus-visible { outline: 3px solid #cc9800; outline-offset: 3px; }
+.skip-link { position: fixed; top: -80px; left: 12px; z-index: 1001; padding: 12px; background: white; }
+.skip-link:focus { top: 6px; }
+#particles-js { position: fixed; inset: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
+@media (prefers-color-scheme: dark) {
+  .profile-links a, .pub-body .title { color: #3eb7f0; }
+  .skip-link { background: #20212b; }
+}
+@media screen and (max-width: 960px) {
+  body { padding: 0; }
+  .wrapper { width: auto; margin: 0 24px !important; }
+  header { position: static; width: auto; float: none; padding: 86px 0 30px; max-height: none; }
+  main { width: auto; float: none; padding: 25px 0; border-top: 1px solid #e5e5e5; }
+  .menu-toggle { display: block; margin-left: auto; }
+  .topnav #myLinks { margin: 0; }
+  .topnav.responsive #myLinks { max-height: 70vh; overflow-y: auto; }
+  .topnav a.normal { width: auto; }
+  .image.avatar img { width: 145px; height: 145px; }
+}
+@media screen and (max-width: 540px) {
+  .wrapper { margin: 0 20px !important; }
+  .pub-row { display: block; }
+  .publications .abbr { margin-bottom: 14px !important; }
+  .publications ol.bibliography li .teaser { width: 100%; height: 170px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  #particles-js { display: none; }
+}
+@media print {
+  .topnav, #particles-js, .skip-link { display: none; }
+  .wrapper { width: 100%; }
+  header, main { position: static; float: none; width: 100%; padding: 10px 0; max-height: none; }
+  body { background: white; color: black; }
+}

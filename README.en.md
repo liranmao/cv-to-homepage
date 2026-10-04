@@ -4,7 +4,15 @@
 
 Give Codex or Claude your CV to build a personal website and deploy it to GitHub Pages. Undergraduates can include coursework projects and internships; graduate students can add research interests and publications.
 
-[Preview the website](https://liranmao.github.io/cv-to-homepage/) · [Download the skill](https://github.com/liranmao/cv-to-homepage/releases/latest/download/cv-to-homepage.zip)
+[Choose a website style](https://liranmao.github.io/cv-to-homepage/) · [Background library](https://liranmao.github.io/cv-to-homepage/library/) · [Download the skill](https://github.com/liranmao/cv-to-homepage/releases/latest/download/cv-to-homepage.zip)
+
+## Choose a style
+
+Open the [style gallery](https://liranmao.github.io/cv-to-homepage/) to explore eight complete pages: Classic Academic, Paper & Ink, Swiss Grid, Terminal Notes, Field Notes, Research Blueprint, Aurora Glass, and Studio Folio.
+
+Use the control at the top of each page to switch backgrounds. Once you have chosen a style and background, click “Copy build prompt” and send it to the AI with your CV. You can start with [Classic Academic](https://liranmao.github.io/cv-to-homepage/styles/classic/).
+
+The [background library](https://liranmao.github.io/cv-to-homepage/library/) includes particles, paper grain, dots, grids, aurora, stars, contours, a spotlight, a color mesh, and flowing lines, with full previews, parameters, and a [source download](https://liranmao.github.io/cv-to-homepage/downloads/background-library.zip).
 
 ## Install
 
@@ -60,11 +68,12 @@ Run these commands from this repository:
 
 ```bash
 python3 skills/cv-to-homepage/scripts/create_site.py \
-  --profile examples/undergraduate.json --output ../my-homepage
+  --profile examples/undergraduate.json --output ../my-homepage \
+  --theme editorial --background paper
 python3 -m http.server 8000 --bind 127.0.0.1 --directory ../my-homepage/docs
 ```
 
-Open `http://127.0.0.1:8000` to see the page. The three examples are `undergraduate.json`, `masters-zh.json`, and `phd.json`, all in `examples/`. Replace the placeholders with your own information.
+Open `http://127.0.0.1:8000` to see the page. The three examples are `undergraduate.json`, `masters-zh.json`, and `phd.json`, all in `examples/`. Replace the placeholders with your own information. Use `--theme` to choose a style and `--background` to choose a background; omitting them uses Classic Academic.
 
 To deploy manually, replace `USERNAME/REPO` with your username and a new repository name:
 

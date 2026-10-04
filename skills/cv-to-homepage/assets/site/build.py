@@ -18,7 +18,10 @@ LABELS = {
            'skills': '技能', 'service': '教学与服务', 'menu': '菜单'},
 }
 STRINGS = {'name', 'position', 'affiliation', 'degree', 'email', 'description',
-           'site_url', 'avatar', 'cv', 'language', 'publication_note'}
+           'site_url', 'avatar', 'cv', 'language', 'publication_note', 'theme', 'background'}
+CATALOG = json.loads((Path(__file__).resolve().parent / 'designs.json').read_text(encoding='utf-8'))
+THEMES = {item['id']: item for item in CATALOG['themes']}
+BACKGROUNDS = {'none'} | {item['id'] for item in CATALOG['effects']}
 LISTS = {'about', 'links', 'publications', 'projects', 'experience', 'education',
          'awards', 'skills', 'service', 'section_order'}
 ENTRY_KEYS = {'title', 'organization', 'dates', 'details', 'url', 'group'}
@@ -75,6 +78,10 @@ def validate(data, root=None):
             raise ValueError(key + ' must be an array.')
     if data.get('language', 'en') not in LABELS:
         raise ValueError('language must be en or zh.')
+    if data.get('theme', 'classic') not in THEMES:
+        raise ValueError('Unknown theme. Choose one of: ' + ', '.join(THEMES))
+    if data.get('background', 'none') not in BACKGROUNDS:
+        raise ValueError('Unknown background. Choose one of: ' + ', '.join(sorted(BACKGROUNDS)))
     email = data.get('email', '')
     if email and not re.fullmatch(r'[^\s@<>?&#]+@[^\s@<>?&#]+\.[^\s@<>?&#]+', email):
         raise ValueError('email must be a plain email address.')
@@ -122,6 +129,8 @@ def link(label, url, css=''):
 
 def render(data, template):
     labels = LABELS[data.get('language', 'en')]
+    theme = data.get('theme', 'classic')
+    background = data.get('background', THEMES[theme]['background'])
     profile = ''
     if data.get('avatar'):
         profile += '<span class="image avatar"><img src="{}" alt="{}"></span>'.format(esc(data['avatar']), esc(data['name']))
@@ -186,13 +195,15 @@ def render(data, template):
                 if item.get('details'):
                     content += '<ul>' + ''.join('<li>{}</li>'.format(esc(x)) for x in item['details']) + '</ul>'
                 content += '</div>'
-        sections.append('<article aria-labelledby="{0}"><h2 id="{0}">{1}</h2>{2}</article>'.format(anchor, labels[key], content))
+        sections.append('<article class="section-{3}" aria-labelledby="{0}"><h2 id="{0}">{1}</h2>{2}</article>'.format(anchor, labels[key], content, key))
     canonical = '<link rel="canonical" href="{}">'.format(esc(data['site_url'])) if data.get('site_url') else ''
     return Template(template).substitute(
         lang='zh-CN' if data.get('language') == 'zh' else 'en',
         title=esc(' | '.join(filter(None, [data['name'], data.get('affiliation')]))),
         description=esc(data.get('description') or ' '.join(data.get('about', []))[:180]),
-        canonical=canonical, profile=profile, navigation=''.join(nav), sections='\n'.join(sections), menu=labels['menu'])
+        canonical=canonical, profile=profile, navigation=''.join(nav), sections='\n'.join(sections), menu=labels['menu'],
+        theme=theme, background=background,
+        particles_script='<script src="assets/js/particles.min.js" defer></script>' if background == 'particles' else '')
 
 
 def build(root):

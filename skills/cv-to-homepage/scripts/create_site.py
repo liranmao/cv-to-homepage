@@ -17,11 +17,15 @@ def engine():
     return module
 
 
-def create(profile, output, avatar=None, public_cv=None):
+def create(profile, output, avatar=None, public_cv=None, theme=None, background=None):
     output = Path(output).expanduser().absolute()
     if output.exists() or output.is_symlink():
         raise ValueError('Output already exists. Choose a new directory; use build.py to update an existing site.')
     data = json.loads(Path(profile).read_text(encoding='utf-8'))
+    if theme:
+        data['theme'] = theme
+    if background:
+        data['background'] = background
     module = engine()
     module.validate(data)
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -61,8 +65,10 @@ if __name__ == '__main__':
     p.add_argument('--output', type=Path, required=True)
     p.add_argument('--avatar', type=Path)
     p.add_argument('--public-cv', type=Path, help='Explicitly publish this reviewed PDF as a downloadable CV.')
+    p.add_argument('--theme', help='Style ID from the gallery (default: classic).')
+    p.add_argument('--background', help='Background ID from the library, or none.')
     a = p.parse_args()
     try:
-        print(create(a.profile, a.output, a.avatar, a.public_cv))
+        print(create(a.profile, a.output, a.avatar, a.public_cv, a.theme, a.background))
     except (ValueError, OSError) as e:
         p.exit(1, 'Cannot create site: ' + str(e) + '\n')

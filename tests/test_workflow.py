@@ -8,6 +8,8 @@ import tempfile
 import unittest
 from unittest.mock import patch
 from html.parser import HTMLParser
+from urllib.parse import urlsplit, unquote
+from zipfile import ZipFile
 
 ROOT = Path(__file__).resolve().parents[1]
 SKILL = ROOT / 'skills/cv-to-homepage'
@@ -150,6 +152,60 @@ class WorkflowTests(unittest.TestCase):
             self.assertTrue((site / 'docs/index.html').is_file())
         with self.assertRaises(ValueError):
             install.install('both', self.root)
+
+    def test_every_theme_builds_with_its_default_background(self):
+        for theme in build.CATALOG['themes']:
+            with self.subTest(theme=theme['id']):
+                site = create.create(ROOT / 'examples/phd.json', self.root / theme['id'], theme=theme['id'])
+                html = (site / 'docs/index.html').read_text()
+                self.assertIn('data-theme="' + theme['id'] + '"', html)
+                self.assertIn('data-background="' + theme['background'] + '"', html)
+                self.assertNotIn('demo-toolbar', html)
+                self.assertEqual(json.loads((site / 'site.json').read_text())['theme'], theme['id'])
+                # The exported site must rebuild without the installed skill.
+                exported = load('exported_' + theme['id'], site / 'build.py')
+                exported.build(site)
+                self.assertEqual(html, (site / 'docs/index.html').read_text())
+
+    def test_background_overrides_and_invalid_choices(self):
+        for effect in build.BACKGROUNDS:
+            with self.subTest(effect=effect):
+                site = create.create(ROOT / 'examples/phd.json', self.root / effect, theme='editorial', background=effect)
+                html = (site / 'docs/index.html').read_text()
+                self.assertIn('data-background="' + effect + '"', html)
+                self.assertEqual('src="assets/js/particles.min.js"' in html, effect == 'particles')
+        for key in ['theme', 'background']:
+            with self.assertRaises(ValueError):
+                build.validate({'name': 'Test', key: '../invalid'})
+
+    def test_gallery_pages_and_bundle_have_no_broken_local_links(self):
+        def check_tree(root):
+            for page in root.rglob('*.html'):
+                parsed = Links()
+                parsed.feed(page.read_text())
+                for href in parsed.links:
+                    link = urlsplit(href)
+                    if link.scheme or link.netloc:
+                        continue
+                    target = (page.parent / unquote(link.path)).resolve() if link.path else page
+                    if target.is_dir():
+                        target = target / 'index.html'
+                    self.assertTrue(target.is_file(), str(page) + ': ' + href)
+                    if link.fragment and target.suffix == '.html':
+                        dest = Links()
+                        dest.feed(target.read_text())
+                        self.assertIn(link.fragment, dest.ids, str(page) + ': ' + href)
+        check_tree(ROOT / 'docs')
+        with ZipFile(ROOT / 'docs/downloads/background-library.zip') as bundle:
+            bundle.extractall(self.root)
+        check_tree(self.root / 'background-library')
+
+    def test_background_bundle_is_reproducible(self):
+        demo = load('demo_builder', ROOT / 'scripts/build_demo.py')
+        a, b = self.root / 'a.zip', self.root / 'b.zip'
+        demo.write_bundle(a)
+        demo.write_bundle(b)
+        self.assertEqual(a.read_bytes(), b.read_bytes())
 
 
 if __name__ == '__main__':

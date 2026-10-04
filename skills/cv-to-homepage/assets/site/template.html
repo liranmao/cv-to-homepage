@@ -11,12 +11,16 @@
   <link rel="stylesheet" href="assets/css/publications.css">
   <link rel="stylesheet" href="assets/css/nav.css">
   <link rel="stylesheet" href="assets/css/site.css">
-  <script src="assets/js/particles.min.js" defer></script>
+  <link rel="stylesheet" href="assets/css/themes.css">
+  <link rel="stylesheet" href="assets/css/effects.css">
+  $particles_script
   <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/effects.js" defer></script>
 </head>
-<body>
+<body data-theme="$theme" data-background="$background">
   <a class="skip-link" href="#main">Skip to content</a>
   <div id="particles-js" aria-hidden="true"></div>
+  <div id="site-background" aria-hidden="true"></div>
   <nav class="topnav" aria-label="Main navigation">
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="myLinks">☰ <span>$menu</span></button>
     <div id="myLinks">$navigation</div>

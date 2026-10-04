@@ -1,7 +1,7 @@
 'use strict';
 const menu = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.topnav');
-menu.addEventListener('click', () => {
+menu?.addEventListener('click', () => {
   const open = nav.classList.toggle('responsive');
   menu.setAttribute('aria-expanded', String(open));
 });
@@ -11,7 +11,7 @@ document.querySelectorAll('#myLinks a').forEach(a => a.addEventListener('click',
 }));
 
 // particles.js 2.0.0. Respect the visitor's reduced-motion preference.
-if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+if (document.body.dataset.background === 'particles' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches && !new URLSearchParams(location.search).has('preview')) {
     var particleColor = "#060771";
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       particleColor = "#3eb7f0";

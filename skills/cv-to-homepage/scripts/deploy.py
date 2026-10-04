@@ -60,7 +60,7 @@ def deploy(site, repo, publish=False, timeout=240):
     (site / 'site.json').write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     module.build(site)
     run(['git', 'init', '-b', 'main'], site)
-    files = ['docs', 'site.json', 'build.py', 'template.html', 'README.md', 'README.en.md', '.gitignore', 'LICENSE', 'ATTRIBUTION.md', 'THIRD_PARTY_LICENSES.txt']
+    files = ['docs', 'site.json', 'designs.json', 'build.py', 'template.html', 'README.md', 'README.en.md', '.gitignore', 'LICENSE', 'ATTRIBUTION.md', 'THIRD_PARTY_LICENSES.txt']
     files += [str(p.relative_to(site / 'docs')) for p in (site / 'docs/assets').rglob('*') if p.is_file()]
     run(['git', 'add', '--'] + files, site)
     run(['git', 'commit', '-m', 'Create academic homepage from reviewed CV'], site)
