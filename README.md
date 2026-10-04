@@ -8,11 +8,13 @@
 
 ## 选择风格
 
-打开[风格总览](https://liranmao.github.io/cv-to-homepage/)，查看 8 种完整页面：经典学术、纸墨书页、瑞士网格、终端笔记、自然手记、蓝图研究、极光玻璃和独立作品集。
+打开[风格总览](https://liranmao.github.io/cv-to-homepage/)，查看 10 种完整页面：经典学术、纸墨书页、瑞士网格、终端笔记、自然手记、蓝图研究、极光玻璃、独立作品集、包豪斯和手绘笔记。
 
 每个页面顶部都能切换背景。选好“风格＋背景”后，点击“复制建站指令”，和简历一起发给 AI。可以先从[经典学术](https://liranmao.github.io/cv-to-homepage/styles/classic/)开始看。
 
-[素材库](https://liranmao.github.io/cv-to-homepage/library/)收录了粒子、纸感、点阵、网格、极光、星野、等高线、聚光、柔彩渐变和流线，附完整预览、参数与[源码下载](https://liranmao.github.io/cv-to-homepage/downloads/background-library.zip)。
+[素材库](https://liranmao.github.io/cv-to-homepage/library/)收录了粒子、纸感、点阵、网格、极光、星野、等高线、聚光、柔彩渐变、流线、几何游乐和铅笔涂鸦，附完整预览、参数与[源码下载](https://liranmao.github.io/cv-to-homepage/downloads/background-library.zip)。
+
+各风格配有轻量动效：纸页浮尘、点阵呼吸、网格扫描、叶形漂浮、极光微闪、柔光圆环、几何转动和涂鸦描画。文字保持稳定；开启系统“减少动态效果”后，背景以静态方式显示。
 
 ## 安装
 
@@ -88,6 +90,7 @@ python3 skills/cv-to-homepage/scripts/deploy.py \
 
 ```bash
 python3 -m unittest discover -s tests -v
+node --test tests/test_effects.cjs
 python3 scripts/build_demo.py
 python3 scripts/package.py
 ```

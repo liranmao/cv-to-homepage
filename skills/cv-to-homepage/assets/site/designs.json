@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "themes": [
     {
       "id": "classic",
@@ -152,6 +152,44 @@
         "#ad623e"
       ],
       "layout": "Studio split layout"
+    },
+    {
+      "id": "bauhaus",
+      "name": "包豪斯",
+      "english": "Bauhaus Studio",
+      "tone": "浅色",
+      "description": "红黄蓝几何、大字与模块排版，适合设计、建筑和跨学科作品。",
+      "background": "geometry",
+      "tags": [
+        "几何",
+        "原色",
+        "现代主义"
+      ],
+      "palette": [
+        "#eee9df",
+        "#d63828",
+        "#2459a6"
+      ],
+      "layout": "Geometric poster and modular index"
+    },
+    {
+      "id": "sketch",
+      "name": "手绘笔记",
+      "english": "Sketchbook",
+      "tone": "浅色",
+      "description": "铅笔线、纸胶带与手写标题，像一本摊开的个人创作笔记。",
+      "background": "doodles",
+      "tags": [
+        "手绘",
+        "纸张",
+        "笔记"
+      ],
+      "palette": [
+        "#faf7ef",
+        "#3f4540",
+        "#396d85"
+      ],
+      "layout": "Hand-drawn notebook with marginal illustrations"
     }
   ],
   "effects": [
@@ -176,45 +214,51 @@
       "id": "paper",
       "name": "纸张颗粒",
       "english": "Paper Grain",
-      "motion": "静态",
-      "description": "细颗粒叠在暖纸底上，适合长文与衬线排版。",
-      "technology": "CSS + SVG",
+      "motion": "动态",
+      "description": "细纸纹上几粒浮尘轻轻游动，像窗边落在书页上的光。",
+      "technology": "CSS + SVG + JavaScript",
       "license": "CC0",
       "source": "https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feTurbulence",
       "parameters": {
         "grain_frequency": 0.72,
         "octaves": 3,
-        "opacity": 0.055
+        "opacity": 0.055,
+        "dust_count": 14,
+        "cycle_seconds": 28
       }
     },
     {
       "id": "dots",
       "name": "点阵纸",
       "english": "Dot Matrix",
-      "motion": "静态",
-      "description": "均匀点阵，给空白页面一点秩序感。",
-      "technology": "CSS",
+      "motion": "交互",
+      "description": "点阵缓慢呼吸，鼠标经过时附近的点轻轻亮起。",
+      "technology": "CSS + Canvas 2D",
       "license": "CC0",
       "source": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/radial-gradient",
       "parameters": {
         "spacing_px": 24,
         "radius_px": 1,
-        "opacity": 0.13
+        "opacity": 0.13,
+        "pulse_seconds": 8,
+        "hover_radius_px": 160
       }
     },
     {
       "id": "grid",
       "name": "坐标网格",
       "english": "Coordinate Grid",
-      "motion": "静态",
-      "description": "细密网格与较粗主线，浅色、深色页面都可用。",
-      "technology": "CSS",
+      "motion": "动态",
+      "description": "扫描光与少量光点沿网格滑行，像运行中的研究仪器。",
+      "technology": "CSS + Canvas 2D",
       "license": "CC0",
       "source": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Images/Using_gradients",
       "parameters": {
         "minor_grid_px": 32,
         "major_grid_px": 160,
-        "opacity": 0.1
+        "opacity": 0.1,
+        "scan_seconds": 20,
+        "track_count": 6
       }
     },
     {
@@ -222,14 +266,15 @@
       "name": "极光流动",
       "english": "Aurora Drift",
       "motion": "动态",
-      "description": "大范围的紫绿光晕缓慢平移，适合深色首页。",
-      "technology": "CSS",
+      "description": "柔和极光缓慢流动，稀疏微光在光晕间闪动。",
+      "technology": "CSS + SVG + JavaScript",
       "license": "CC0",
       "source": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/keyframes",
       "parameters": {
         "duration_seconds": 24,
         "blur_px": 70,
-        "opacity": 0.3
+        "opacity": 0.3,
+        "glimmer_count": 18
       }
     },
     {
@@ -251,14 +296,16 @@
       "id": "contours",
       "name": "地形等高线",
       "english": "Topographic Lines",
-      "motion": "静态",
-      "description": "疏密相间的曲线像地图纹理，适合自然色系。",
-      "technology": "SVG",
+      "motion": "动态",
+      "description": "地图曲线轻轻摆动，几片细小叶形在留白处漂浮。",
+      "technology": "CSS + SVG + JavaScript",
       "license": "CC0",
       "source": "https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/path",
       "parameters": {
         "stroke_px": 1,
-        "opacity": 0.13
+        "opacity": 0.13,
+        "sway_seconds": 32,
+        "leaf_count": 9
       }
     },
     {
@@ -266,13 +313,14 @@
       "name": "柔光聚焦",
       "english": "Soft Spotlight",
       "motion": "交互",
-      "description": "淡光跟随鼠标移动，页面内容保持清晰。",
-      "technology": "CSS + JavaScript",
+      "description": "柔光跟随鼠标，几个细线光环在背景里缓慢漂浮。",
+      "technology": "CSS + SVG + JavaScript",
       "license": "CC0",
       "source": "https://developer.mozilla.org/en-US/docs/Web/API/Pointer_events",
       "parameters": {
         "radius_px": 520,
-        "opacity": 0.11
+        "opacity": 0.11,
+        "ring_count": 5
       }
     },
     {
@@ -303,6 +351,37 @@
         "amplitude_px": 28,
         "opacity": 0.13,
         "phase_radians_per_second": 0.16
+      }
+    },
+    {
+      "id": "geometry",
+      "name": "几何游乐",
+      "english": "Geometric Play",
+      "motion": "交互",
+      "description": "圆、方、三角以缓慢节奏旋转漂移，并轻轻响应鼠标。",
+      "technology": "CSS + SVG + JavaScript",
+      "license": "CC0",
+      "source": "https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/animateTransform",
+      "parameters": {
+        "shapes": 9,
+        "cycle_seconds": 36,
+        "opacity": 0.18,
+        "parallax_px": 10
+      }
+    },
+    {
+      "id": "doodles",
+      "name": "铅笔涂鸦",
+      "english": "Pencil Doodles",
+      "motion": "动态",
+      "description": "星星、线圈与手绘箭头轮流描画，像纸页边角的随手笔记。",
+      "technology": "CSS + SVG + JavaScript",
+      "license": "CC0",
+      "source": "https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/stroke-dashoffset",
+      "parameters": {
+        "drawings": 10,
+        "cycle_seconds": 24,
+        "opacity": 0.24
       }
     }
   ],

@@ -112,6 +112,44 @@ body[data-theme="folio"] { --page:#f8f5f0; --ink:#2d2925; --accent:#93502e; --mu
 [data-theme="folio"] .publications ol.bibliography { display:grid; grid-template-columns:1fr 1fr; gap:30px; }
 [data-theme="folio"] .pub-row { display:block; }
 [data-theme="folio"] .publications ol.bibliography li .teaser { width:100%; height:225px; border-radius:0; margin-bottom:18px; }
+/* Bauhaus: primary-color poster, geometric masthead, strong modular divisions. */
+body[data-theme="bauhaus"]{--page:#eee9df;--ink:#222322;--accent:#ba2e22;--muted:#63625c;--line:#aaa79d;--surface:#f7f2e8;font-family:Arial,Helvetica,sans-serif}
+[data-theme="bauhaus"] .wrapper{width:min(1160px,calc(100% - 88px))}
+[data-theme="bauhaus"] header{position:relative;float:none;width:100%;max-height:none;text-align:left;padding:105px 245px 48px 0;border-bottom:8px solid var(--ink);isolation:isolate}
+[data-theme="bauhaus"] header:after{content:"";position:absolute;right:0;top:110px;width:210px;height:220px;z-index:-1;background:radial-gradient(circle at 50% 25%,#d63828 0 51px,transparent 52px),linear-gradient(90deg,transparent 50%,#dfb334 50%) 0 120px/105px 100px no-repeat,linear-gradient(#2459a6,#2459a6) 110px 120px/100px 100px no-repeat;border-bottom:3px solid #222}
+[data-theme="bauhaus"] header h1{font-size:clamp(48px,7vw,88px);line-height:.95;letter-spacing:-.07em;font-weight:800;max-width:760px;margin:0 0 30px}
+[data-theme="bauhaus"] .image.avatar{float:none;display:block;margin-bottom:22px}
+[data-theme="bauhaus"] .image.avatar img{width:78px;height:78px;border-radius:50%;padding:0;filter:grayscale(1)}
+[data-theme="bauhaus"] .profile-links{justify-content:flex-start}
+[data-theme="bauhaus"] main{float:none;width:100%;padding-top:0;counter-reset:bauhaus-sections}
+[data-theme="bauhaus"] article{position:relative;display:grid;grid-template-columns:240px 1fr;gap:0 35px;padding:36px 0;border-bottom:2px solid var(--ink)}
+[data-theme="bauhaus"] article>h2{grid-column:1;grid-row:1 / span 30;font-size:27px;line-height:1.1;font-weight:800;letter-spacing:-.045em}
+[data-theme="bauhaus"] article>h2:before{counter-increment:bauhaus-sections;content:counter(bauhaus-sections,decimal-leading-zero);display:block;font:700 13px/1.2 Arial,sans-serif;color:var(--accent);margin-bottom:17px}
+[data-theme="bauhaus"] article>:not(h2){grid-column:2}
+[data-theme="bauhaus"] .publications{margin-top:0}
+[data-theme="bauhaus"] .publications .teaser{border-radius:0!important}
+[data-theme="bauhaus"] .publications .badge{border-radius:0}
+/* Sketchbook: irregular ink borders, tape portrait, marginal pencil marks. */
+body[data-theme="sketch"]{--page:#faf7ef;--ink:#3f4540;--accent:#396d85;--muted:#7c7d71;--line:#c8c6b9;--surface:#fffdf5;font-family:Georgia,"Times New Roman",serif}
+[data-theme="sketch"] .wrapper{width:min(1100px,calc(100% - 88px))}
+[data-theme="sketch"] header{width:270px;text-align:left;top:65px;overflow:visible}
+[data-theme="sketch"] header h1,[data-theme="sketch"] h2,[data-theme="sketch"] h3{font-family:"Chalkboard SE","Comic Sans MS","Segoe Print",cursive}
+[data-theme="sketch"] header h1{font-size:40px;line-height:1.12;letter-spacing:-.035em;transform:rotate(-2deg);margin:24px 0}
+[data-theme="sketch"] .image.avatar{position:relative;display:inline-block;border-radius:2px;overflow:visible;transform:rotate(-4deg);padding:10px 10px 24px;background:#fffdf8;border:1px solid #d5d0c4;box-shadow:3px 4px 0 #c9c4b334;margin:12px 0 15px 12px}
+[data-theme="sketch"] .image.avatar:before{display:block;opacity:1;border-radius:1px;content:"";position:absolute;left:36%;top:-11px;width:58px;height:24px;background:#dccb93b3;transform:rotate(8deg);z-index:1}
+[data-theme="sketch"] .image.avatar img{padding:0;border-radius:0;width:135px;height:150px;filter:sepia(.12)}
+[data-theme="sketch"] .profile-links{justify-content:flex-start}
+[data-theme="sketch"] main{width:calc(100% - 350px)}
+[data-theme="sketch"] article{position:relative;padding:25px 29px;border:1.5px solid #90988c;border-radius:2px 9px 4px 11px / 9px 3px 12px 4px;background:#fffdf6df;box-shadow:3px 4px 0 #ddd8c933}
+[data-theme="sketch"] article:after{content:"";position:absolute;inset:4px -4px -3px 4px;border:1px solid #939b822b;border-radius:9px 3px 11px 5px;pointer-events:none}
+[data-theme="sketch"] h2{display:table;font-size:27px;font-weight:400;border-bottom:3px solid #e3c577;border-radius:0 0 48% 8%;padding:0 4px 3px}
+[data-theme="sketch"] .publications .abbr{flex-basis:140px}
+[data-theme="sketch"] .publications .teaser{width:140px!important;border:1px solid #b9c0b3;border-radius:3px 9px 2px 6px!important;transform:rotate(-1deg)}
+[data-theme="sketch"] .publications .badge{border-radius:3px 1px 5px 2px;transform:rotate(-2deg)}
+[data-theme="sketch"] .entry{border-bottom-style:dashed!important}
+@media(max-width:960px){[data-theme="bauhaus"] header{padding-right:220px!important}[data-theme="sketch"] .image.avatar{float:right;margin-left:25px}[data-theme="sketch"] header h1{transform:none}}
+@media(max-width:600px){[data-theme="bauhaus"] header{padding-right:0!important}[data-theme="bauhaus"] header:after{top:95px;width:100px;height:115px;background:radial-gradient(circle at 50% 24%,#d63828 0 25px,transparent 26px),linear-gradient(90deg,transparent 50%,#dfb334 50%) 0 60px/48px 50px no-repeat,linear-gradient(#2459a6,#2459a6) 55px 60px/45px 50px no-repeat}[data-theme="bauhaus"] header h1{margin-top:25px}[data-theme="bauhaus"] article{padding-left:0!important;padding-right:0!important}[data-theme="bauhaus"] article>h2:before{display:inline;margin-right:16px}[data-theme="sketch"] .image.avatar{margin-left:12px!important}[data-theme="sketch"] .publications .teaser{width:100%!important}}
+
 @media(prefers-color-scheme:dark) { body[data-theme="classic"] { --page:#20212b; --ink:#dadbdf; --accent:#3eb7f0; --muted:#a1b0bc; --line:#4b5361; } }
 @media(max-width:960px) {
  body:not([data-theme="classic"]) .wrapper { width:auto; margin:0 24px!important; }
@@ -137,3 +175,5 @@ body[data-theme="folio"] { --page:#f8f5f0; --ink:#2d2925; --accent:#93502e; --mu
  [data-theme="folio"] .section-about { font-size:19px; }
 }
 @media print { body:not([data-theme="classic"]) { --page:white; --ink:black; --muted:#444; --accent:#222; --line:#aaa; } body:not([data-theme="classic"]) header { padding-top:0; } body:not([data-theme="classic"]) main { display:block; } }
+
+@media(max-width:960px){body[data-theme="bauhaus"] header{position:relative}}

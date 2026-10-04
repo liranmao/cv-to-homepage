@@ -8,11 +8,13 @@ Give Codex or Claude your CV to build a personal website and deploy it to GitHub
 
 ## Choose a style
 
-Open the [style gallery](https://liranmao.github.io/cv-to-homepage/) to explore eight complete pages: Classic Academic, Paper & Ink, Swiss Grid, Terminal Notes, Field Notes, Research Blueprint, Aurora Glass, and Studio Folio.
+Open the [style gallery](https://liranmao.github.io/cv-to-homepage/) to explore ten complete pages: Classic Academic, Paper & Ink, Swiss Grid, Terminal Notes, Field Notes, Research Blueprint, Aurora Glass, Studio Folio, Bauhaus Studio, and Sketchbook.
 
 Use the control at the top of each page to switch backgrounds. Once you have chosen a style and background, click “Copy build prompt” and send it to the AI with your CV. You can start with [Classic Academic](https://liranmao.github.io/cv-to-homepage/styles/classic/).
 
-The [background library](https://liranmao.github.io/cv-to-homepage/library/) includes particles, paper grain, dots, grids, aurora, stars, contours, a spotlight, a color mesh, and flowing lines, with full previews, parameters, and a [source download](https://liranmao.github.io/cv-to-homepage/downloads/background-library.zip).
+The [background library](https://liranmao.github.io/cv-to-homepage/library/) includes particles, paper grain, dots, grids, aurora, stars, contours, a spotlight, a color mesh, flowing lines, geometric shapes, and pencil doodles, with full previews, parameters, and a [source download](https://liranmao.github.io/cv-to-homepage/downloads/background-library.zip).
+
+Each style has subtle motion: paper dust, breathing dots, grid scans, floating leaves, aurora glimmers, soft rings, turning shapes, or drawing doodles. Text stays still. When the system’s reduced-motion setting is enabled, backgrounds remain static.
 
 ## Install
 
@@ -88,6 +90,7 @@ The website is published from `/docs` on the `main` branch. If deployment is int
 
 ```bash
 python3 -m unittest discover -s tests -v
+node --test tests/test_effects.cjs
 python3 scripts/build_demo.py
 python3 scripts/package.py
 ```

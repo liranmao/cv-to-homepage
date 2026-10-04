@@ -16,8 +16,10 @@ The canonical catalog is `assets/site/designs.json` relative to the skill root. 
 | blueprint | 蓝图研究 / Research Blueprint | Full-width profile block, technical sections | grid |
 | aurora | 极光玻璃 / Aurora Glass | Centered hero, translucent columns | aurora |
 | folio | 独立作品集 / Studio Folio | Large name, wide introduction, project columns | spotlight |
+| bauhaus | 包豪斯 / Bauhaus Studio | Primary-color geometric masthead, modular index | geometry |
+| sketch | 手绘笔记 / Sketchbook | Taped portrait, irregular ink borders, handwritten headings | doodles |
 
-Background IDs: `particles`, `paper`, `dots`, `grid`, `aurora`, `stars`, `contours`, `spotlight`, `mesh`, `lines`; use `none` for a plain background. All backgrounds can be paired with any style. A preset's typography and palette stay fixed when its background changes. Only `classic` follows the OS light/dark palette; other styles use their intended light or dark colors.
+Background IDs: `particles`, `paper`, `dots`, `grid`, `aurora`, `stars`, `contours`, `spotlight`, `mesh`, `lines`, `geometry`, `doodles`; use `none` for a plain background. All backgrounds can be paired with any style. A preset's typography and palette stay fixed when its background changes. Only `classic` follows the OS light/dark palette; other styles use their intended light or dark colors.
 
 ## Resolve a user selection
 
@@ -39,4 +41,4 @@ To change an existing generated site, edit `theme` and `background` in `site.jso
 
 Set `body[data-background]`, add `#site-background` and `#particles-js`, and include the shipped CSS and JavaScript. The `--accent` CSS variable controls most backgrounds; the classic particle preset retains its original light/dark colors and parameters. Full websites may need a stacking-context adjustment when adapting these materials outside this template.
 
-Use low-contrast backgrounds behind readable text. CSS motion respects reduced-motion settings; Canvas backgrounds stop animating when hidden. Thumbnail previews use static rendering. Keep the existing MIT notice when redistributing particles.js; other newly authored effects are CC0. External resource links in the catalog are references, not additional bundled effects.
+Use low-contrast backgrounds behind readable text. Paper dust, dot pulses, grid scans, drifting leaves, aurora glimmers, and floating rings add restrained motion to the existing styles. Geometry adds slow turning shapes and pointer parallax; doodles draw pencil marks in long cycles. Text never animates. All new CSS and Canvas motion respects reduced-motion settings and stops when the page is hidden or paused. Thumbnail previews use static rendering. Keep the existing MIT notice when redistributing particles.js; other newly authored effects are CC0. External resource links in the catalog are references, not additional bundled effects.

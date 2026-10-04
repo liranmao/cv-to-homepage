@@ -5,7 +5,7 @@ description: Turn a CV or resume into a personal academic website with a chosen 
 
 # CV to Homepage
 
-Build the user's website using the selected style and background. Read [references/style-library.md](references/style-library.md) when the user chooses a style, shares a gallery URL, or asks for options. All eight layouts and ten backgrounds are bundled; no online template fetch is required. The default `classic` style keeps the navy navigation, profile sidebar, serif typography and particle background. Preserve the selected design unless the user requests a change.
+Build the user's website using the selected style and background. Read [references/style-library.md](references/style-library.md) when the user chooses a style, shares a gallery URL, or asks for options. All ten layouts and twelve backgrounds are bundled; no online template fetch is required. The default `classic` style keeps the navy navigation, profile sidebar, serif typography and particle background. Preserve the selected design unless the user requests a change.
 
 Resolve helper paths relative to this skill's directory, wherever it is installed. The scripts need Python 3.9+; deployment additionally needs Git and authenticated GitHub CLI (`gh`). The user's Codex or Claude session interprets the CV; there is no extra model API, API key, or paid hosting dependency.
 

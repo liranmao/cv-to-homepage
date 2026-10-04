@@ -14,7 +14,7 @@ Visual directions considered from its cards:
 | spotlight-sweep-moves | Studio Folio: restrained background illumination, continuously readable content |
 | glass-pill-dictation-typing | Aurora Glass: translucent surfaces and soft background color |
 
-The source library's exact animation recipes are not reproduced. For reading-focused websites, avoid delayed text reveals, dramatic camera moves, sound, and effects that hide content. Static paper, dots, grid and contour materials complement the moving options.
+The source library's exact animation recipes are not reproduced. For reading-focused websites, avoid delayed text reveals, dramatic camera moves, sound, and effects that hide content. Paper dust, breathing dots, grid scans and drifting leaves give those materials restrained movement without moving text. Bauhaus adds primary-color geometry; Sketchbook uses irregular ink borders, a taped portrait and pencil doodles. All new motion pauses when the page is hidden and respects reduced-motion preferences.
 
 ## Implementation sources
 
@@ -23,4 +23,4 @@ The source library's exact animation recipes are not reproduced. For reading-foc
 - MDN: gradient, SVG and Canvas implementation references linked per effect in `designs.json`.
 - Additional discovery links: tsParticles, Vanta, css-doodle and Codrops Ambient Canvas. These are linked references, not copied dependencies.
 
-`scripts/build_demo.py` emits the overview, eight complete style pages, a library overview, ten full material pages and ten thumbnail documents. It also builds a deterministic, standalone material ZIP. The packaged skill uses the same template/assets and catalog as the previews.
+`scripts/build_demo.py` emits the overview, ten complete style pages, a library overview, twelve full material pages and twelve thumbnail documents. It also builds a deterministic, standalone material ZIP. The packaged skill uses the same template/assets and catalog as the previews.
