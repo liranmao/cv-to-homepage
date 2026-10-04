@@ -222,7 +222,7 @@ def build(root):
     (docs / 'index.html').write_text(rendered, encoding='utf-8')
     (docs / '.nojekyll').touch()
     marker.write_text('Generated public site. Rebuild with python3 build.py.\n')
-    for name in ['LICENSE', 'ATTRIBUTION.md']:
+    for name in ['LICENSE', 'ATTRIBUTION.md', 'THIRD_PARTY_LICENSES.txt']:
         if (root / name).is_file():
             shutil.copy2(root / name, docs / name)
     return docs

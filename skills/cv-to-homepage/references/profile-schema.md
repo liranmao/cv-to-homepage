@@ -4,10 +4,10 @@ The agent extracts and reviews the CV, then writes JSON. `name` is the only requ
 
 ```json
 {
-  "name": "Your name",
-  "position": "M.Sc. Student",
+  "name": "First name Last name",
+  "position": "Your position",
   "affiliation": "Your university",
-  "degree": "Previously: B.Sc. in Computer Science",
+  "degree": "Previous degree, Field of study",
   "email": "name@example.edu",
   "language": "en",
   "description": "A brief, factual search-engine description.",
@@ -15,7 +15,7 @@ The agent extracts and reviews the CV, then writes JSON. `name` is the only requ
   "links": [{"label": "GitHub", "url": "https://github.com/USERNAME"}],
   "projects": [{"title": "Project title", "organization": "Course or lab", "dates": "2025–2026", "details": ["Your actual contribution."]}],
   "experience": [{"title": "Research Assistant", "organization": "Your institution", "dates": "2025–Present", "group": "Research Experience", "details": ["Your actual work."]}],
-  "education": [{"title": "M.Sc. in Computer Science", "organization": "Your university", "dates": "2025–Present"}],
+  "education": [{"title": "Degree in Field of study", "organization": "Your university", "dates": "2025–Present"}],
   "publications": [{"title": "Exact paper title", "authors": "Exact authors, in order", "venue": "Exact venue or submission status", "year": "2026", "links": [{"label": "Paper", "url": "https://doi.org/VALID-DOI"}]}],
   "awards": ["Award, awarding organization, year"],
   "skills": ["Python", "R"],

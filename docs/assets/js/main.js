@@ -9,46 +9,28 @@ document.querySelectorAll('#myLinks a').forEach(a => a.addEventListener('click',
   nav.classList.remove('responsive');
   menu.setAttribute('aria-expanded', 'false');
 }));
-// Small local canvas animation; no trackers or external JavaScript dependencies.
-const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-const dark = window.matchMedia('(prefers-color-scheme: dark)');
-const canvas = document.querySelector('#particles');
-const ctx = canvas.getContext('2d');
-let width, height, points = [], frame;
-function resize() {
-  width = window.innerWidth; height = window.innerHeight;
-  const ratio = Math.min(window.devicePixelRatio || 1, 2);
-  canvas.width = width * ratio; canvas.height = height * ratio;
-  ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
-  points = Array.from({length: Math.min(50, Math.ceil(width / 25))}, () => ({
-    x: Math.random() * width, y: Math.random() * height,
-    dx: (Math.random() - .5) * .35, dy: (Math.random() - .5) * .35
-  }));
-}
-function draw() {
-  ctx.clearRect(0, 0, width, height);
-  ctx.fillStyle = ctx.strokeStyle = dark.matches ? '#3eb7f0' : '#060771';
-  points.forEach((p, i) => {
-    p.x = (p.x + p.dx + width) % width; p.y = (p.y + p.dy + height) % height;
-    ctx.globalAlpha = .15; ctx.beginPath(); ctx.arc(p.x, p.y, 2, 0, Math.PI * 2); ctx.fill();
-    points.slice(i + 1).forEach(q => {
-      const d = Math.hypot(p.x - q.x, p.y - q.y);
-      if (d < 150) {
-        ctx.globalAlpha = .12 * (1 - d / 150);
-        ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y); ctx.stroke();
-      }
+
+// particles.js 2.0.0. Respect the visitor's reduced-motion preference.
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var particleColor = "#060771";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      particleColor = "#3eb7f0";
+    }
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 50, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": particleColor },
+        "shape": { "type": "circle", "stroke": { "width": 0, "color": "#000000" }, "polygon": { "nb_sides": 5 } },
+        "opacity": { "value": 0.15, "random": false, "anim": { "enable": false } },
+        "size": { "value": 3, "random": true, "anim": { "enable": false } },
+        "line_linked": { "enable": true, "distance": 150, "color": particleColor, "opacity": 0.15, "width": 1 },
+        "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false, "attract": { "enable": false, "rotateX": 600, "rotateY": 1200 } }
+      },
+      "interactivity": {
+        "detect_on": "window",
+        "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
+        "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } }, "bubble": { "distance": 400, "size": 40, "duration": 2, "opacity": 8, "speed": 3 }, "repulse": { "distance": 200, "duration": 0.4 }, "push": { "particles_nb": 4 }, "remove": { "particles_nb": 2 } }
+      },
+      "retina_detect": true
     });
-  });
-  frame = requestAnimationFrame(draw);
-}
-function sync() {
-  cancelAnimationFrame(frame);
-  ctx.clearRect(0, 0, width, height);
-  if (!reduced.matches && !document.hidden) draw();
-}
-if (ctx) {
-  resize(); sync();
-  window.addEventListener('resize', resize);
-  reduced.addEventListener('change', sync);
-  document.addEventListener('visibilitychange', sync);
 }

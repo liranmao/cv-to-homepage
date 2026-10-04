@@ -1,25 +1,23 @@
-FICTIONAL SAMPLE CV — FOR TESTING ONLY
-
-Alex Chen
-Undergraduate Student, Example University
+First name Last name
+Your position, University name
 
 Education
-B.Sc. in Computer Science, Example University, 2023–2027 (expected)
+Degree in Field of study, University name, YYYY–YYYY
 
 Projects
-Campus accessibility map — Course project, 2025
-Built a searchable map of accessible entrances using Python and open campus data.
+Project title — Course or lab name, YYYY
+Describe your role, approach, and results.
 
-Reading group notes, 2025–2026
-Maintained reproducible notebooks for introductory machine learning experiments.
+Project title, YYYY–YYYY
+Describe your contribution and what you learned.
 
 Experience
-Student Research Assistant, Human-Centered Computing Lab, 2025–Present
-Cleaned interview data and documented the analysis workflow.
+Position title, Organization name, YYYY–Present
+Describe your responsibilities and contributions.
 
 Awards
-Undergraduate Research Award, Example University, 2025
+Award name, Awarding organization, YYYY
 
 Skills
-Python, JavaScript, SQL
-Data visualization and reproducible analysis
+Skill or tool
+Method or area of expertise

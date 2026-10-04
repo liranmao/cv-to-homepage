@@ -41,11 +41,15 @@ def create(profile, output, avatar=None, public_cv=None):
         (work / 'site.json').write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
         (work / '.gitignore').write_text('.DS_Store\n__pycache__/\n*.pyc\n.private/\n.env*\n')
         (work / 'README.md').write_text('# ' + data['name'] + '\n\n'
-            'Edit the reviewed public content in `site.json`, then run `python3 build.py`.\n'
-            'Preview: `python3 -m http.server 8000 --directory docs`.\n'
-            'GitHub Pages publishes `main` → `/docs`. Commit and push rebuilt `docs/` when updating.\n\n'
-            'Keep raw CVs and private notes outside this repository. Only intentionally public files belong here.\n'
-            'Built with [cv-to-homepage](https://github.com/liranmao/cv-to-homepage).\n', encoding='utf-8')
+            '中文 | [English](README.en.md)\n\n'
+            '编辑 `site.json`，运行 `python3 build.py` 生成网站。\n\n'
+            '本地预览：`python3 -m http.server 8000 --bind 127.0.0.1 --directory docs`。\n\n'
+            'GitHub Pages 发布 `main` 分支的 `/docs`。更新后，提交并推送改动和重建的 `docs/`。\n', encoding='utf-8')
+        (work / 'README.en.md').write_text('# ' + data['name'] + '\n\n'
+            '[中文](README.md) | English\n\n'
+            'Edit `site.json`, then run `python3 build.py` to build the website.\n\n'
+            'Local preview: `python3 -m http.server 8000 --bind 127.0.0.1 --directory docs`.\n\n'
+            'GitHub Pages publishes `/docs` on the `main` branch. After updating, commit and push your changes and the rebuilt `docs/`.\n', encoding='utf-8')
         module.build(work)
         work.rename(output)
     return output

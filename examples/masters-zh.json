@@ -1,45 +1,45 @@
 {
-  "name": "林晓",
-  "position": "计算机科学硕士生",
-  "affiliation": "示例大学",
+  "name": "First name Last name",
+  "position": "你的身份",
+  "affiliation": "学校名称",
   "language": "zh",
   "about": [
-    "我是示例大学计算机科学专业硕士生，关注数据可视化与人机交互。希望通过清晰、易用的软件帮助人们理解数据。"
+    "在这里介绍你的学术背景、研究兴趣和目前的工作。"
   ],
   "education": [
     {
-      "title": "计算机科学硕士（在读）",
-      "organization": "示例大学",
-      "dates": "2025–2027（预计）"
+      "title": "学位与专业名称",
+      "organization": "学校名称",
+      "dates": "YYYY–YYYY"
     },
     {
-      "title": "软件工程学士",
-      "organization": "示例理工学院",
-      "dates": "2021–2025"
+      "title": "学位与专业名称",
+      "organization": "学校名称",
+      "dates": "YYYY–YYYY"
     }
   ],
   "projects": [
     {
-      "title": "交互式公共交通数据探索工具",
-      "dates": "2026",
+      "title": "项目名称",
+      "dates": "YYYY",
       "details": [
-        "使用 Python 整理公开数据，以 JavaScript 实现交互式图表。"
+        "介绍你在项目中的工作、方法和成果。"
       ]
     }
   ],
   "experience": [
     {
-      "title": "软件开发实习生",
-      "organization": "示例科技公司",
-      "dates": "2024.06–2024.09",
+      "title": "职位名称",
+      "organization": "机构名称",
+      "dates": "YYYY.MM–YYYY.MM",
       "details": [
-        "参与内部数据看板的开发与用户测试。"
+        "介绍你的职责和贡献。"
       ]
     }
   ],
   "skills": [
-    "Python、JavaScript、SQL",
-    "数据可视化、用户访谈"
+    "技能或工具",
+    "方法或专业领域"
   ],
   "section_order": [
     "about",

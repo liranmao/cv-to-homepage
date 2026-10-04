@@ -1,11 +1,11 @@
 ---
 name: cv-to-homepage
-description: Turn a CV or resume into an academic personal website using Liran Mao's Minimal Light layout, then deploy to a new GitHub Pages repository when requested. Use for undergraduate, master's, or PhD personal homepages, including Chinese requests such as 用简历建立个人网站. Not for unrelated websites or redesigning an existing site.
+description: Turn a CV or resume into an academic personal website using the bundled academic homepage template, then deploy to a new GitHub Pages repository when requested. Use for undergraduate, master's, or PhD personal homepages, including Chinese requests such as 用简历建立个人网站. Not for unrelated websites or redesigning an existing site.
 ---
 
 # CV to Homepage
 
-Build the user's website with the bundled template: navy navigation, profile sidebar, serif typography, publication thumbnails when available, responsive layout, dark mode, and a subtle particle background. Preserve this design unless the user requests a change. The template is derived from `liranmao/liranmao.github.io` at commit `16700beda5662b6e24896306a871a40843488761`; never write to that repository or push its history into a new site.
+Build the user's website with the bundled template: navy navigation, profile sidebar, serif typography, publication thumbnails when available, responsive layout, dark mode, and a subtle particle background. Preserve this design unless the user requests a change.
 
 Resolve helper paths relative to this skill's directory, wherever it is installed. The scripts need Python 3.9+; deployment additionally needs Git and authenticated GitHub CLI (`gh`). The user's Codex or Claude session interprets the CV; there is no extra model API, API key, or paid hosting dependency.
 
