@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Build the style gallery, complete website previews, and reusable background library."""
 import importlib.util
+import hashlib
+import re
 import json
 from pathlib import Path
 import shutil
@@ -123,6 +125,13 @@ def main():
             folder=output/'library'/effect['id'];folder.mkdir()
             (folder/'index.html').write_text(effect_page(effect))
             (folder/'preview.html').write_text(effect_page(effect,True))
+        # A changed asset gets a new URL so returning visitors see the current design.
+        for page_path in output.rglob('*.html'):
+            def version_asset(match):
+                asset=(page_path.parent/match.group(2)).resolve()
+                digest=hashlib.sha256(asset.read_bytes()).hexdigest()[:12]
+                return match.group(1)+match.group(2)+'?v='+digest+match.group(3)
+            page_path.write_text(re.sub(r'((?:href|src)=")([^"?]+\.(?:css|js))(")',version_asset,page_path.read_text()))
         write_bundle(output/'downloads/background-library.zip')
         (output/'.nojekyll').touch();(output/'.cv-to-homepage').write_text('Generated gallery. Rebuild with python3 scripts/build_demo.py.\n')
         destination=ROOT/'docs'
