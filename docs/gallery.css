@@ -6,3 +6,5 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 
 .effect-page .outline-button{color:var(--text);border-color:var(--subtle)}.effect-page .copy-status{color:var(--subtle)}
+
+.intro.intro-title{display:block}.intro.intro-title h1{margin:0}
