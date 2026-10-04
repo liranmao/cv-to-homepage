@@ -177,3 +177,6 @@ body[data-theme="sketch"]{--page:#faf7ef;--ink:#3f4540;--accent:#396d85;--muted:
 @media print { body:not([data-theme="classic"]) { --page:white; --ink:black; --muted:#444; --accent:#222; --line:#aaa; } body:not([data-theme="classic"]) header { padding-top:0; } body:not([data-theme="classic"]) main { display:block; } }
 
 @media(max-width:960px){body[data-theme="bauhaus"] header{position:relative}}
+/* Let the grid motion remain visible through technical-style panels. */
+body[data-theme="blueprint"][data-background="grid"] article,body[data-theme="blueprint"][data-background="grid"] header{background:#102a43ba}
+body[data-theme="terminal"][data-background="grid"] article{background:#0d1412bf}

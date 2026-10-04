@@ -223,8 +223,10 @@
         "grain_frequency": 0.72,
         "octaves": 3,
         "opacity": 0.055,
-        "dust_count": 14,
-        "cycle_seconds": 28
+        "dust_count": 22,
+        "cycle_seconds": 18,
+        "dust_diameter_px": 5.72,
+        "dust_opacity": 0.48
       }
     },
     {
@@ -240,8 +242,16 @@
         "spacing_px": 24,
         "radius_px": 1,
         "opacity": 0.13,
-        "pulse_seconds": 8,
-        "hover_radius_px": 160
+        "pulse_seconds": 6,
+        "hover_radius_px": 200,
+        "pulse_radius_px": [
+          1.2,
+          2.4
+        ],
+        "pulse_opacity": [
+          0.13,
+          0.38
+        ]
       }
     },
     {
@@ -257,8 +267,10 @@
         "minor_grid_px": 32,
         "major_grid_px": 160,
         "opacity": 0.1,
-        "scan_seconds": 20,
-        "track_count": 6
+        "scan_seconds": 14,
+        "track_count": 9,
+        "track_speed_px_per_second": 32,
+        "track_opacity": 0.6
       }
     },
     {
@@ -273,8 +285,12 @@
       "parameters": {
         "duration_seconds": 24,
         "blur_px": 70,
-        "opacity": 0.3,
-        "glimmer_count": 18
+        "opacity": 0.36,
+        "glimmer_count": 24,
+        "glimmer_cycle_seconds": [
+          10,
+          16
+        ]
       }
     },
     {
@@ -304,8 +320,10 @@
       "parameters": {
         "stroke_px": 1,
         "opacity": 0.13,
-        "sway_seconds": 32,
-        "leaf_count": 9
+        "sway_seconds": 24,
+        "leaf_count": 12,
+        "leaf_size_px": 42,
+        "leaf_opacity": 0.42
       }
     },
     {
@@ -320,7 +338,9 @@
       "parameters": {
         "radius_px": 520,
         "opacity": 0.11,
-        "ring_count": 5
+        "ring_count": 6,
+        "ring_size_px": 140,
+        "ring_opacity": 0.27
       }
     },
     {

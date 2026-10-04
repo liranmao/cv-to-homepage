@@ -7,7 +7,7 @@ body:not([data-background="particles"]) #particles-js { display:none; }
 [data-background="paper"] #site-background:before { opacity:.055; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E"); }
 [data-background="dots"] #site-background:before { opacity:.13; background-image:radial-gradient(currentColor 1px,transparent 1px); background-size:24px 24px; }
 [data-background="grid"] #site-background:before { opacity:.10; background-image:linear-gradient(currentColor 1px,transparent 1px),linear-gradient(90deg,currentColor 1px,transparent 1px),linear-gradient(currentColor 1px,transparent 1px),linear-gradient(90deg,currentColor 1px,transparent 1px); background-size:32px 32px,32px 32px,160px 160px,160px 160px; }
-[data-background="aurora"] #site-background:before { inset:-25%; opacity:.30; background:radial-gradient(ellipse at 25% 20%,#745af2,transparent 45%),radial-gradient(ellipse at 75% 45%,#399f94,transparent 45%),radial-gradient(ellipse at 40% 80%,#985a9a,transparent 45%); filter:blur(70px); animation:ambient-drift 24s ease-in-out infinite alternate; }
+[data-background="aurora"] #site-background:before { inset:-25%; opacity:.36; background:radial-gradient(ellipse at 25% 20%,#745af2,transparent 45%),radial-gradient(ellipse at 75% 45%,#399f94,transparent 45%),radial-gradient(ellipse at 40% 80%,#985a9a,transparent 45%); filter:blur(70px); animation:ambient-drift 24s ease-in-out infinite alternate; }
 [data-background="mesh"] #site-background:before { inset:-20%; opacity:.22; background:radial-gradient(ellipse at 15% 25%,#cc837b,transparent 40%),radial-gradient(ellipse at 80% 45%,#70afa9,transparent 42%),radial-gradient(ellipse at 45% 80%,#e1b168,transparent 50%); animation:ambient-drift 30s ease-in-out infinite alternate-reverse; }
 [data-background="spotlight"] #site-background:before { background:radial-gradient(520px circle at var(--pointer-x,65%) var(--pointer-y,22%),var(--accent,#ad623e),transparent 100%); opacity:.11; }
 [data-background="contours"] #site-background svg { width:100%; height:100%; opacity:.13; }
@@ -19,22 +19,24 @@ body.motion-paused #site-background:before, body.motion-paused #site-background:
 .ambient-layer{position:absolute;inset:0;transform:translate(var(--parallax-x,0px),var(--parallax-y,0px));transition:transform 1.8s ease-out}
 .ambient-mark{position:absolute;width:32px;height:32px;opacity:.24;animation:ambient-float var(--duration,28s) ease-in-out var(--delay,0s) infinite alternate;will-change:transform}
 .ambient-mark svg{width:100%;height:100%;overflow:visible}
-[data-background="paper"] .ambient-mark{width:14px;height:14px;opacity:.27}
-[data-background="contours"] .contour-map{animation:contour-sway 32s ease-in-out infinite alternate;transform-origin:50% 50%}
+[data-background="paper"] .ambient-mark{width:22px;height:22px;opacity:.48;animation-name:ambient-float-visible}
+[data-background="contours"] .contour-map{animation:contour-sway 24s ease-in-out infinite alternate;transform-origin:50% 50%}
 [data-background="contours"] #site-background .ambient-mark svg{opacity:1}
-[data-background="contours"] .ambient-mark{width:28px;height:28px;opacity:.24}
-[data-background="aurora"] .ambient-mark{width:22px;height:22px;opacity:.6;animation:ambient-glimmer var(--duration,26s) ease-in-out var(--delay,0s) infinite alternate}
-[data-background="spotlight"] .ambient-mark{width:100px;height:100px;opacity:.14}
+[data-background="contours"] .ambient-mark{width:42px;height:42px;opacity:.42;animation-name:ambient-float-visible}
+[data-background="aurora"] .ambient-mark{width:32px;height:32px;opacity:.85;filter:drop-shadow(0 0 5px currentColor);animation:ambient-glimmer var(--duration,14s) ease-in-out var(--delay,0s) infinite alternate}
+[data-background="spotlight"] .ambient-mark{width:140px;height:140px;opacity:.27;animation-name:ambient-float-visible}
 [data-background="geometry"] .ambient-mark{width:90px;height:90px;opacity:.18;animation:geometry-turn 36s ease-in-out var(--delay,0s) infinite alternate}
 [data-background="doodles"] .ambient-mark{width:70px;height:70px;opacity:.24}
 [data-background="doodles"] .ambient-mark path{stroke-dasharray:100;animation:pencil-draw 24s ease-in-out var(--delay,0s) infinite}
-.grid-scan{position:absolute;inset:-20% 0 auto;height:20%;background:linear-gradient(transparent,color-mix(in srgb,currentColor 4%,transparent),transparent);animation:grid-scan 20s linear infinite}
+.grid-scan{position:absolute;inset:-20% 0 auto;height:20%;background:linear-gradient(transparent,color-mix(in srgb,currentColor 9%,transparent),transparent);animation:grid-scan 14s linear infinite}
 @keyframes ambient-float{from{transform:translate(-8px,10px) rotate(-8deg)}to{transform:translate(12px,-22px) rotate(13deg)}}
-@keyframes ambient-glimmer{0%,100%{opacity:.15;transform:translate(0,8px) scale(.65)}50%{opacity:.7;transform:translate(12px,-12px) scale(1)}}
-@keyframes contour-sway{from{transform:scale(1.03) rotate(-1deg) translateY(-6px)}to{transform:scale(1.06) rotate(1deg) translateY(8px)}}
+@keyframes ambient-glimmer{0%,100%{opacity:.28;transform:translate(-8px,18px) scale(.65)}50%{opacity:1;transform:translate(22px,-24px) scale(1.15)}}
+@keyframes contour-sway{from{transform:scale(1.05) rotate(-1.5deg) translateY(-12px)}to{transform:scale(1.08) rotate(1.5deg) translateY(15px)}}
 @keyframes geometry-turn{from{transform:translate(-6px,10px) rotate(-12deg)}to{transform:translate(10px,-16px) rotate(25deg)}}
 @keyframes pencil-draw{0%,12%{stroke-dashoffset:100;opacity:.25}38%,80%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:-100;opacity:.25}}
 @keyframes grid-scan{to{transform:translateY(600%)}}
 body.ambient-still #site-background *,body.ambient-still #site-background:before,body.ambient-still #site-background:after{animation-play-state:paused!important;transition:none!important}
 body.preview-static [data-background="doodles"] path,body.preview-static[data-background="doodles"] .ambient-mark path{animation:none;stroke-dashoffset:0}
 @media(prefers-reduced-motion:reduce){#site-background *,#site-background:before,#site-background:after{animation:none!important;transition:none!important}.ambient-layer{transform:none}.ambient-mark path{stroke-dashoffset:0}}
+
+@keyframes ambient-float-visible{from{transform:translate(-18px,26px) rotate(-14deg)}to{transform:translate(24px,-42px) rotate(20deg)}}
