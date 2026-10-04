@@ -1,0 +1,73 @@
+{
+  "name": "Alex Chen",
+  "position": "Ph.D. Student in Computer Science",
+  "affiliation": "Example University",
+  "degree": "M.Sc. in Data Science, Example Institute",
+  "language": "en",
+  "about": [
+    "I am a Ph.D. student in computer science at Example University. My research focuses on interpretable machine learning and tools that help scientists explore complex datasets.",
+    "This is a fictional demonstration profile. Replace its content with facts from your own CV."
+  ],
+  "publications": [
+    {
+      "title": "Interpretable representations for scientific data exploration",
+      "authors": "Alex Chen, Taylor Lee, Morgan Patel",
+      "venue": "Demonstration manuscript \u00b7 not a real publication",
+      "year": "2026",
+      "notes": "Fictional entry for template demonstration."
+    },
+    {
+      "title": "Human-centered evaluation of interactive research tools",
+      "authors": "Taylor Lee, Alex Chen",
+      "venue": "Demonstration workshop paper \u00b7 not a real publication",
+      "year": "2025"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Graduate Research Assistant",
+      "organization": "Example University",
+      "dates": "2024\u2013Present",
+      "group": "Research Experience",
+      "details": [
+        "Developed reproducible analysis workflows for scientific datasets.",
+        "Collaborated with domain researchers on interactive visualization prototypes."
+      ]
+    },
+    {
+      "title": "Research Intern",
+      "organization": "Example Research Institute",
+      "dates": "Summer 2025",
+      "group": "Research Experience",
+      "details": [
+        "Studied how researchers interpret model uncertainty."
+      ]
+    },
+    {
+      "title": "Teaching Assistant, Introduction to Data Science",
+      "organization": "Example University",
+      "dates": "Spring 2026",
+      "group": "Teaching Experience",
+      "details": [
+        "Led tutorials on Python, statistics, and reproducible notebooks."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "title": "Ph.D. in Computer Science",
+      "organization": "Example University",
+      "dates": "2024\u2013Present"
+    },
+    {
+      "title": "M.Sc. in Data Science",
+      "organization": "Example Institute",
+      "dates": "2022\u20132024"
+    },
+    {
+      "title": "B.Sc. in Computer Science",
+      "organization": "Example College",
+      "dates": "2018\u20132022"
+    }
+  ]
+}

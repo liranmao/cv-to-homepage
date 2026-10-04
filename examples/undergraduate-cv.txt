@@ -1,0 +1,25 @@
+FICTIONAL SAMPLE CV — FOR TESTING ONLY
+
+Alex Chen
+Undergraduate Student, Example University
+
+Education
+B.Sc. in Computer Science, Example University, 2023–2027 (expected)
+
+Projects
+Campus accessibility map — Course project, 2025
+Built a searchable map of accessible entrances using Python and open campus data.
+
+Reading group notes, 2025–2026
+Maintained reproducible notebooks for introductory machine learning experiments.
+
+Experience
+Student Research Assistant, Human-Centered Computing Lab, 2025–Present
+Cleaned interview data and documented the analysis workflow.
+
+Awards
+Undergraduate Research Award, Example University, 2025
+
+Skills
+Python, JavaScript, SQL
+Data visualization and reproducible analysis

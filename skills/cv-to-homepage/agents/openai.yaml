@@ -1,0 +1,4 @@
+interface:
+  display_name: "CV to Homepage"
+  short_description: "Build and deploy an academic website from your CV"
+  default_prompt: "Use $cv-to-homepage to turn my CV into a personal academic website and deploy it to a new GitHub Pages repository."

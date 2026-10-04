@@ -1,0 +1,58 @@
+{
+  "name": "Alex Chen",
+  "position": "Undergraduate Student",
+  "affiliation": "Example University",
+  "language": "en",
+  "about": [
+    "I am an undergraduate student in computer science at Example University. My coursework and projects focus on data analysis and accessible software."
+  ],
+  "education": [
+    {
+      "title": "B.Sc. in Computer Science",
+      "organization": "Example University",
+      "dates": "2023–2027 (expected)"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Campus accessibility map",
+      "organization": "Course project",
+      "dates": "2025",
+      "details": [
+        "Built a searchable map of accessible entrances using Python and open campus data."
+      ]
+    },
+    {
+      "title": "Reading group notes",
+      "dates": "2025–2026",
+      "details": [
+        "Maintained reproducible notebooks for introductory machine learning experiments."
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "title": "Student Research Assistant",
+      "organization": "Human-Centered Computing Lab",
+      "dates": "2025–Present",
+      "details": [
+        "Cleaned interview data and documented the analysis workflow."
+      ]
+    }
+  ],
+  "awards": [
+    "Undergraduate Research Award, Example University, 2025"
+  ],
+  "skills": [
+    "Python, JavaScript, SQL",
+    "Data visualization and reproducible analysis"
+  ],
+  "section_order": [
+    "about",
+    "education",
+    "projects",
+    "experience",
+    "awards",
+    "skills"
+  ]
+}

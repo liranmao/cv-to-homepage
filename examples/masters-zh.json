@@ -1,0 +1,51 @@
+{
+  "name": "林晓",
+  "position": "计算机科学硕士生",
+  "affiliation": "示例大学",
+  "language": "zh",
+  "about": [
+    "我是示例大学计算机科学专业硕士生，关注数据可视化与人机交互。希望通过清晰、易用的软件帮助人们理解数据。"
+  ],
+  "education": [
+    {
+      "title": "计算机科学硕士（在读）",
+      "organization": "示例大学",
+      "dates": "2025–2027（预计）"
+    },
+    {
+      "title": "软件工程学士",
+      "organization": "示例理工学院",
+      "dates": "2021–2025"
+    }
+  ],
+  "projects": [
+    {
+      "title": "交互式公共交通数据探索工具",
+      "dates": "2026",
+      "details": [
+        "使用 Python 整理公开数据，以 JavaScript 实现交互式图表。"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "title": "软件开发实习生",
+      "organization": "示例科技公司",
+      "dates": "2024.06–2024.09",
+      "details": [
+        "参与内部数据看板的开发与用户测试。"
+      ]
+    }
+  ],
+  "skills": [
+    "Python、JavaScript、SQL",
+    "数据可视化、用户访谈"
+  ],
+  "section_order": [
+    "about",
+    "education",
+    "projects",
+    "experience",
+    "skills"
+  ]
+}
