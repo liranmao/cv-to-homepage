@@ -1,4 +1,4 @@
-# CV → Personal website
+# A skill to turn your CV into a personal homepage in 15 minutes
 
 [中文](README.md) | English
 

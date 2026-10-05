@@ -1,4 +1,4 @@
-# CV → 个人网站
+# 15分钟从简历生成个人主页skill
 
 中文 | [English](README.en.md)
 
