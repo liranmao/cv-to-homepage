@@ -66,6 +66,8 @@ Claude Code 中用 `/cv-to-homepage` 替换 `$cv-to-homepage`。
 
 ## 发布网站
 
+发布前，Skill 会询问你想用的网站名，并列出对应的公开 GitHub 仓库和完整网址，等你确认后再发布。例如，仓库名 `my-homepage` 对应 `https://USERNAME.github.io/my-homepage/`。这里的网站名用于网址，不会替换页面上的姓名。
+
 准备一个 GitHub 账号，在电脑上安装 Python 3.9+、Git 和 [GitHub CLI](https://cli.github.com/)。首次使用时运行 `gh auth login` 登录，并设置 Git 提交用的姓名和邮箱。AI 会完成建站、预览和部署，你核对页面内容即可。
 
 网站地址是 `https://USERNAME.github.io/`。如果你已经有这个站点，新网站会使用 `https://USERNAME.github.io/REPO/`。把链接放进简历、邮件签名或社交账号，就可以分享了。

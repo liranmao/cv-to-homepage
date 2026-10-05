@@ -4,6 +4,14 @@ Requirements: Python 3.9+, Git, GitHub CLI, a GitHub account. `gh auth login` is
 
 The helper supports personal accounts and brand-new public repositories only. It rejects the original `liranmao/liranmao.github.io` and skill-distribution repository `liranmao/cv-to-homepage`. Organization destinations and deliberate updates to an existing user-owned site need a manual, explicitly scoped workflow.
 
+## Confirm the destination with the user
+
+Follow the naming step in `SKILL.md` before a new public deployment. Ask for the name they want in the website address, then show the available `OWNER/REPO`, its public visibility and the full expected Pages URL. A project repository named `my-homepage` publishes to `https://OWNER.github.io/my-homepage/`; an available and permitted `OWNER.github.io` repository publishes to `https://OWNER.github.io/`.
+
+Check availability with read-only calls before presenting the final choice. Only a 404 establishes that the repository is absent; authentication, permission and network failures do not. The dry-run command below calculates the expected address but does not check availability or record user consent. The agent must obtain confirmation in the conversation before using `--publish` or performing equivalent writes manually. Do not add another prompt inside the noninteractive helper.
+
+If the name becomes unavailable between confirmation and deployment, stop, suggest another name and confirm the new address. For a partial deployment, retain the confirmed destination and inspect it before resuming. Routine updates to the same confirmed site do not repeat this naming step.
+
 ## What the helper does
 
 1. Without `--publish`, show the exact destination, visibility, source and expected URL; no network writes.

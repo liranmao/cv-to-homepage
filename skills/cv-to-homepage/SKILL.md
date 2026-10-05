@@ -17,7 +17,7 @@ Create a reviewed JSON profile using [references/profile-schema.md](references/p
 
 For undergraduates, lead with education/projects if stronger; for researchers, the source order is About → Publications → Experience → Education. Omit absent sections and links. If no portrait is supplied, omit it. Do not retain any example identity. Use professional contact information only; omit home addresses, phone numbers, date of birth, student IDs, signatures and referee contact details unless explicitly requested. A request to build a site does not automatically request a downloadable copy of the full CV.
 
-Only ask about missing facts that prevent completion, such as an absent CV or ambiguous name. Continue building while nonessential preferences are unresolved. Choose a new working directory, never reuse the original template checkout or an unrelated repository.
+Ask about missing essential CV facts, such as an absent CV or ambiguous name, and confirm the website address before publishing as described below. Continue building while nonessential preferences are unresolved. Choose a new working directory, never reuse the original template checkout or an unrelated repository.
 
 ## Generate and review
 
@@ -36,15 +36,30 @@ To add publication images, first generate without image fields; copy only suppli
 
 Verify the rendered page against the CV, empty sections, outbound URLs, all local assets, desktop/mobile layout, and mobile navigation. Preview before publishing when a browser is available; otherwise state that visual checks were not performed. Do not describe the site as live until it has been fetched successfully.
 
-## Publish when requested
+## Ask and confirm the website name
 
-Read [references/deployment.md](references/deployment.md). A request to build **and deploy** authorizes creating a new public website repository; do not ask for the same authorization again. If the request only asks for a local draft, stop at the preview and ask only when public deployment becomes relevant.
+For a new public website, ask the user what name they want in its address. Explain that this is the GitHub repository name / URL path, not their personal name or the heading shown on the page. Keep the profile's `name` field unchanged. Use the user's language and suggest one simple name, such as `my-homepage`, if they have no preference.
 
-Use the authenticated GitHub username. Prefer `USERNAME/USERNAME.github.io` if available; if it exists, propose/use a fresh project repository such as `USERNAME/my-academic-homepage` according to the user's request. Never overwrite an existing website, force-push, copy a `CNAME`, or change account/domain settings. A CV's links are not authorization to publish into those accounts.
+Read [references/deployment.md](references/deployment.md). Resolve the authenticated GitHub username and check repository availability with read-only commands. If `USERNAME/USERNAME.github.io` is available and permitted, offer the root address; if it already exists or is protected, propose a new project repository and its `/REPO/` address. If a requested name is unavailable, suggest an available alternative and let the user choose; never silently add a suffix or switch destinations. Use a URL-friendly repository name, such as lowercase letters, digits and hyphens; explain any conversion from a Chinese name before asking for confirmation.
+
+After preparing the local site and preview, show the exact proposed repository, public visibility and full expected website URL, then ask the user to confirm or supply another name. For example:
+
+> 这个网站的网址名称用 `my-homepage` 可以吗？
+> 新建公开仓库：`USERNAME/my-homepage`
+> 网站地址：`https://USERNAME.github.io/my-homepage/`
+> 确认后我就按这个地址发布；也可以告诉我你想换的名称。
+
+Wait for the user's answer before creating a remote repository, pushing or enabling Pages. A general request to build and deploy, an inferred name, silence, or elapsed time is not confirmation of the destination. If they change the name, check it and show the revised repository and URL for confirmation. If they have already confirmed that exact repository and URL in this conversation, proceed without asking again. Continue local editing and preview work while a name or confirmation is pending.
+
+This step applies to new public deployments. Local-only drafts do not need a repository name. Later content updates to the same confirmed site do not need another naming question; a change of account, repository or address needs a new confirmation.
+
+## Publish the confirmed website
+
+A request to build **and deploy** authorizes publication; the step above resolves and confirms its destination. Use the confirmed repository exactly. Never overwrite an existing website, force-push, copy a `CNAME`, or change account/domain settings. A CV's links are not authorization to publish into those accounts.
 
 ```bash
 python3 /path/to/cv-to-homepage/scripts/deploy.py --site /path/to/my-homepage --repo USERNAME/NEW-REPO
 python3 /path/to/cv-to-homepage/scripts/deploy.py --site /path/to/my-homepage --repo USERNAME/NEW-REPO --publish
 ```
 
-The first command is a dry run. The second creates a new public repository and publishes `main:/docs`. Inspect an existing partial deployment before recovery; never retry blindly. Report the repository URL, verified live URL or exact pending/blocking status, and how to update the content. Fifteen minutes is a target when accounts and tools are ready, not a guaranteed deployment time.
+The first command is a dry run and can be used to prepare the destination confirmation. Run the second only after that confirmation; it creates a new public repository and publishes `main:/docs`. Inspect an existing partial deployment before recovery; never retry blindly. Report the repository URL, verified live URL or exact pending/blocking status, and how to update the content. Fifteen minutes is a target when accounts and tools are ready, not a guaranteed deployment time.

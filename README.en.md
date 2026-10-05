@@ -66,6 +66,8 @@ You can upload a photo too. To offer a downloadable CV on your website, attach a
 
 ## Publish your website
 
+Before publishing, the skill asks what name you want in your website address, shows the corresponding public GitHub repository and full URL, and waits for your confirmation. For example, the repository name `my-homepage` gives you `https://USERNAME.github.io/my-homepage/`. This name is used in the URL; it does not replace your name on the page.
+
 Have a GitHub account ready and install Python 3.9+, Git, and [GitHub CLI](https://cli.github.com/) on your computer. The first time, run `gh auth login` and configure your Git commit name and email. The AI will build, preview, and deploy the website; you review the page content.
 
 Your website address is `https://USERNAME.github.io/`. If you already have that site, the new one will use `https://USERNAME.github.io/REPO/`. Add the link to your CV, email signature, or social profile to share it.
