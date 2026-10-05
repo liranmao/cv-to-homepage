@@ -2,9 +2,25 @@
 
 [中文](README.md) | English
 
-Give Codex or Claude your CV to build a personal website and deploy it to GitHub Pages. Undergraduates can include coursework projects and internships; graduate students can add research interests and publications.
+**cv-to-homepage is a skill for Codex and Claude** that turns your CV into a publicly accessible personal homepage and deploys it to GitHub Pages in about 15 minutes.
+
+The skill includes **10 website styles and 12 background effects**. Mix and match layouts and backgrounds, or let the AI pick a random combination to create a homepage you like.
 
 [Choose a website style](https://liranmao.github.io/cv-to-homepage/) · [Background library](https://liranmao.github.io/cv-to-homepage/library/) · [Download the skill](https://github.com/liranmao/cv-to-homepage/releases/latest/download/cv-to-homepage.zip)
+
+## Quick Start
+
+Upload your CV (PDF, Word, or plain text), then send this prompt to Codex or Claude Code:
+
+```text
+Install skills/cv-to-homepage from https://github.com/liranmao/cv-to-homepage.
+For Codex, install it in ~/.agents/skills/; for Claude Code, use ~/.claude/skills/.
+Use $cv-to-homepage to build my personal website from my CV.
+Choose Classic Academic (theme: classic) and Particle Network (background: particles).
+Fill in the content from my CV, create a new public GitHub repository, and deploy it to GitHub Pages.
+```
+
+In Claude Code, replace `$cv-to-homepage` with `/cv-to-homepage`. To try a different combination, choose one in the [style gallery](https://liranmao.github.io/cv-to-homepage/) and replace the style and background in the prompt, or change that line to: “Please randomly choose and combine a website style and background.”
 
 ## Choose a style
 

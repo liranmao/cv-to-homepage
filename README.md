@@ -2,9 +2,25 @@
 
 中文 | [English](README.en.md)
 
-把简历交给 Codex 或 Claude，生成个人网站并部署到 GitHub Pages。本科生可以放课程项目和实习经历，硕博可以放研究方向和论文。
+**cv-to-homepage 是一个供 Codex 和 Claude 使用的 Skill**，帮你在约 15 分钟内，把简历变成可公开访问的个人主页，并部署到 GitHub Pages。
+
+Skill 内置 **10 种网站风格和 12 种背景素材**。排版与背景可以自由搭配，也可以让 AI 随机组合，生成你喜欢的主页。
 
 [选择网站风格](https://liranmao.github.io/cv-to-homepage/) · [背景素材库](https://liranmao.github.io/cv-to-homepage/library/) · [下载 Skill](https://github.com/liranmao/cv-to-homepage/releases/latest/download/cv-to-homepage.zip)
+
+## Quick Start / 快速开始
+
+上传你的简历（PDF、Word 或纯文本），然后把下面这段话发给 Codex 或 Claude Code：
+
+```text
+请从 https://github.com/liranmao/cv-to-homepage 安装 skills/cv-to-homepage。
+Codex 安装到 ~/.agents/skills/，Claude Code 安装到 ~/.claude/skills/。
+使用 $cv-to-homepage，根据我的简历建立个人网站。
+风格选择「经典学术」（theme: classic），背景选择「粒子连线」（background: particles）。
+按简历填写内容，创建新的公开 GitHub 仓库并部署到 GitHub Pages。
+```
+
+Claude Code 中用 `/cv-to-homepage` 替换 `$cv-to-homepage`。想换一种搭配，可以在[风格总览](https://liranmao.github.io/cv-to-homepage/)中选好后替换风格和背景，或把选择那一行改成：“请随机选择并组合一种网站风格和背景。”
 
 ## 选择风格
 
