@@ -86,13 +86,19 @@ python3 skills/cv-to-homepage/scripts/deploy.py \
 
 The website is published from `/docs` on the `main` branch. If deployment is interrupted, follow the [deployment guide](skills/cv-to-homepage/references/deployment.md) to finish it.
 
-## Development
+## Contribute a template
 
-```bash
-python3 -m unittest discover -s tests -v
-node --test tests/test_effects.cjs
-python3 scripts/build_demo.py
-python3 scripts/package.py
-```
+Contributions of your own website templates are welcome, along with background effects and improvements to existing styles. Submit a [Pull Request](https://github.com/liranmao/cv-to-homepage/pulls), or share an idea in [Issues](https://github.com/liranmao/cv-to-homepage/issues) first. Include a preview link or screenshot, the template source, a short description of the style, and asset sources and licenses so others can preview and reuse your work.
 
-The skill files are in `skills/cv-to-homepage/`. The packaged file is `dist/cv-to-homepage.zip`.
+## Acknowledgements
+
+Thanks to the following projects and resources:
+
+- [Minimal Light — Yaoyao Liu](https://github.com/yaoyao-liu/minimal-light): the base theme for Classic Academic.
+- [pages-themes/minimal](https://github.com/pages-themes/minimal), [orderedlist/minimal](https://github.com/orderedlist/minimal), and [al-folio](https://github.com/alshedivat/al-folio): upstream themes and design sources credited by Minimal Light.
+- [particles.js — Vincent Garreau](https://github.com/VincentGarreau/particles.js): the animation library used for the particle network background.
+- [video-shotcraft](https://github.com/Vincentwei1021/video-shotcraft): a reference for the gallery's card catalog, material recipes, and some visual directions.
+- [MDN Web Docs](https://developer.mozilla.org/): technical references for CSS gradients, SVG, and Canvas backgrounds.
+- [tsParticles](https://github.com/tsparticles/tsparticles), [Vanta.js](https://github.com/tengbao/vanta), [css-doodle](https://css-doodle.com/), and [Codrops Ambient Canvas](https://tympanus.net/Development/AmbientCanvasBackgrounds/): additional tools and motion inspiration linked in the material library.
+
+See [ATTRIBUTION.md](ATTRIBUTION.md) for detailed sources and [THIRD_PARTY_LICENSES.txt](THIRD_PARTY_LICENSES.txt) for third-party licenses.

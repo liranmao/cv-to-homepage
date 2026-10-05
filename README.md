@@ -86,13 +86,19 @@ python3 skills/cv-to-homepage/scripts/deploy.py \
 
 网站发布目录为 `main` 分支的 `/docs`。部署中断时，可以按[部署说明](skills/cv-to-homepage/references/deployment.md)继续完成。
 
-## 开发
+## 贡献网页模版
 
-```bash
-python3 -m unittest discover -s tests -v
-node --test tests/test_effects.cjs
-python3 scripts/build_demo.py
-python3 scripts/package.py
-```
+欢迎贡献你自己的网页模版，也欢迎分享背景效果、改进现有风格。可以直接提交 [Pull Request](https://github.com/liranmao/cv-to-homepage/pulls)，或先在 [Issues](https://github.com/liranmao/cv-to-homepage/issues) 里交流想法。提交时附上预览链接或截图、模版源码、简短的风格介绍，以及素材来源和许可，方便大家预览和复用。
 
-Skill 文件在 `skills/cv-to-homepage/`，打包文件为 `dist/cv-to-homepage.zip`。
+## Acknowledgements / 致谢
+
+感谢以下项目和资源：
+
+- [Minimal Light — Yaoyao Liu](https://github.com/yaoyao-liu/minimal-light)：经典学术风格的基础主题。
+- [pages-themes/minimal](https://github.com/pages-themes/minimal)、[orderedlist/minimal](https://github.com/orderedlist/minimal) 和 [al-folio](https://github.com/alshedivat/al-folio)：Minimal Light 致谢的上游主题与设计来源。
+- [particles.js — Vincent Garreau](https://github.com/VincentGarreau/particles.js)：粒子连线背景使用的动画库。
+- [video-shotcraft](https://github.com/Vincentwei1021/video-shotcraft)：为图库的卡片目录、素材配方和部分视觉方向提供了参考。
+- [MDN Web Docs](https://developer.mozilla.org/)：CSS 渐变、SVG 与 Canvas 背景实现的技术参考。
+- [tsParticles](https://github.com/tsparticles/tsparticles)、[Vanta.js](https://github.com/tengbao/vanta)、[css-doodle](https://css-doodle.com/) 和 [Codrops Ambient Canvas](https://tympanus.net/Development/AmbientCanvasBackgrounds/)：素材库收录的扩展工具与动效灵感来源。
+
+详细来源见 [ATTRIBUTION.md](ATTRIBUTION.md)，第三方许可见 [THIRD_PARTY_LICENSES.txt](THIRD_PARTY_LICENSES.txt)。
